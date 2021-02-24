@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="Input matching values"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/WorkHoursInWeekText"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:hint="Working hours per week"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:id="@+id/textInputLayout1">
+                    <EditText
+                        android:id="@+id/IncomePerHourText"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:hint="Currency/Hour"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                </android.support.design.widget.TextInputLayout>
+            
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/TaxRateText"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:hint="Tax rate(%)"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/SavingsRateText"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:hint="Savings rate (%)"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/calculateButton"
+                android:text="Calculate your plans"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="250dp"
+                android:layout_height="45dp"/>
+
+
+            <RelativeLayout
+                android:visibility="invisible"
+                android:id="@+id/ResultLayout"
+                android:layout_marginBottom="30dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!-- Annual Work Summary-->
+
+                <TextView
+                    android:id="@+id/WorkTimeTitle"
+                    android:layout_alignParentLeft="true"
+                    android:text="Annual Work Time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/WorkTimeValue"
+                    android:layout_alignParentRight="true"
+                    android:text="0 hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/GrossIncomeTitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/WorkTimeTitle"
+                    android:text="Annual Gross Income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/GrossIncomeValue"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/WorkTimeValue"
+                    android:layout_alignParentRight="true"
+                    android:text="50000 USD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/AnnualTaxTitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/GrossIncomeTitle"
+                    android:text="Annual Tax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/AnnualTaxValue"
+                    android:text="2137 USD"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/GrossIncomeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/AnnualSavingsTitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/AnnualTaxTitle"
+                    android:text="Annual Savings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/AnnualSavingsValue"
+                    android:text="1337 USD"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/AnnualTaxValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/SpendableIncomeTitle"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/AnnualSavingsTitle"
+                    android:text="Spendable Income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/SpendableIncomeValue"
+                    android:text="69 USD"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/AnnualSavingsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+        </ScrollView>
+    
+
+    
+    
+        
+
+</LinearLayout>
